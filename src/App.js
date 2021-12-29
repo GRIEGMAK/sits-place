@@ -4,15 +4,13 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
 const App = () => {
   return (    
     <Router>
-      <div><Link to="/client/">API</Link></div>
     <Switch>
     <Route path="/client">
       <div>Client</div>
