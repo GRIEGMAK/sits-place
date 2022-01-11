@@ -1,14 +1,17 @@
 import './styles/App.css';
 import LeftBar from './components/LeftBar.jsx';
 import React from "react";
+import { observer } from 'mobx-react-lite';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import store from "./store/index"
 
 
 const App = () => {
+  const {getApi} = store;
   return (    
     <Router>
     <Switch>
@@ -16,11 +19,11 @@ const App = () => {
       <div>Client</div>
     </Route>
     <Route path="/">
-      <LeftBar />
+      <LeftBar getApi={getApi} />
     </Route>
   </Switch>
   </Router>
   );
 }
 
-export default App;
+export default observer(App);
